@@ -1,0 +1,6 @@
+method=prcomp; query only; centered log-normalized counts; no variance scaling
+features=up to 500 genes with highest variance; ties broken by gene identifier
+selected_features=500
+pc1_variance_fraction=0.368860663495
+pc2_variance_fraction=0.201121462831
+purpose=cell overview only; not a SingleR score, model step, or independent validation

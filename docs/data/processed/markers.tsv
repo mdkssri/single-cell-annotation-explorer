@@ -1,0 +1,421 @@
+label	comparison	gene_id	marker_rank
+B cell	leukocyte	BANK1	1
+B cell	leukocyte	MS4A1	2
+B cell	leukocyte	RPS27	3
+B cell	leukocyte	RPL13A	4
+B cell	leukocyte	CD79A	5
+B cell	leukocyte	RPL3	6
+B cell	leukocyte	EZR	7
+B cell	leukocyte	RPL13	8
+B cell	leukocyte	CD74	9
+B cell	leukocyte	RPL19	10
+B cell	lymphocyte	HLA-DRB1	1
+B cell	lymphocyte	CD74	2
+B cell	lymphocyte	MS4A1	3
+B cell	lymphocyte	BANK1	4
+B cell	lymphocyte	HLA-DRA	5
+B cell	lymphocyte	EZR	6
+B cell	lymphocyte	RALGPS2	7
+B cell	lymphocyte	HLA-DPB1	8
+B cell	lymphocyte	CD79A	9
+B cell	lymphocyte	PLEKHG1	10
+B cell	macrophage	MS4A1	1
+B cell	macrophage	BANK1	2
+B cell	macrophage	CD37	3
+B cell	macrophage	CD79A	4
+B cell	macrophage	RPS27	5
+B cell	macrophage	TNFRSF13C	6
+B cell	macrophage	RALGPS2	7
+B cell	macrophage	RPL13A	8
+B cell	macrophage	EZR	9
+B cell	macrophage	PLEKHG1	10
+B cell	monocyte	MS4A1	1
+B cell	monocyte	BANK1	2
+B cell	monocyte	CD79A	3
+B cell	monocyte	EZR	4
+B cell	monocyte	RALGPS2	5
+B cell	monocyte	SLC38A1	6
+B cell	monocyte	TNFRSF13C	7
+B cell	monocyte	RPS27	8
+B cell	monocyte	PLEKHG1	9
+B cell	monocyte	RPL13A	10
+B cell	mononuclear cell	MS4A1	1
+B cell	mononuclear cell	BANK1	2
+B cell	mononuclear cell	CD79A	3
+B cell	mononuclear cell	TNFRSF13C	4
+B cell	mononuclear cell	CD37	5
+B cell	mononuclear cell	SWAP70	6
+B cell	mononuclear cell	RPS27	7
+B cell	mononuclear cell	LINC00926	8
+B cell	mononuclear cell	TSC22D3	9
+B cell	mononuclear cell	SP140	10
+B cell	T cell	CD74	1
+B cell	T cell	BANK1	2
+B cell	T cell	HLA-DRB1	3
+B cell	T cell	HLA-DRA	4
+B cell	T cell	MS4A1	5
+B cell	T cell	HLA-DPB1	6
+B cell	T cell	HLA-DPA1	7
+B cell	T cell	CD79A	8
+B cell	T cell	SWAP70	9
+B cell	T cell	HLA-DQB1	10
+leukocyte	B cell	ZEB2	1
+leukocyte	B cell	DOCK5	2
+leukocyte	B cell	NEAT1	3
+leukocyte	B cell	FNDC3B	4
+leukocyte	B cell	AOAH	5
+leukocyte	B cell	MYO1F	6
+leukocyte	B cell	STK10	7
+leukocyte	B cell	SAMHD1	8
+leukocyte	B cell	LCP2	9
+leukocyte	B cell	MT-CO1	10
+leukocyte	lymphocyte	LYN	1
+leukocyte	lymphocyte	NEAT1	2
+leukocyte	lymphocyte	CYRIA	3
+leukocyte	lymphocyte	HYCC1	4
+leukocyte	lymphocyte	LIMS1	5
+leukocyte	lymphocyte	RAPGEF1	6
+leukocyte	lymphocyte	ABCA1	7
+leukocyte	lymphocyte	MYO9B	8
+leukocyte	lymphocyte	IFI30	9
+leukocyte	lymphocyte	TCF7L2	10
+leukocyte	macrophage	FCGR3A	1
+leukocyte	macrophage	LYN	2
+leukocyte	macrophage	RAP1B	3
+leukocyte	macrophage	ARAP2	4
+leukocyte	macrophage	UTRN	5
+leukocyte	macrophage	CTSC	6
+leukocyte	macrophage	BIN2	7
+leukocyte	macrophage	CYFIP2	8
+leukocyte	macrophage	ADAM10	9
+leukocyte	macrophage	NCOA1	10
+leukocyte	monocyte	UTRN	1
+leukocyte	monocyte	ARAP2	2
+leukocyte	monocyte	KLF12	3
+leukocyte	monocyte	MBNL1	4
+leukocyte	monocyte	PTPRC	5
+leukocyte	monocyte	RAP1GAP2	6
+leukocyte	monocyte	MACF1	7
+leukocyte	monocyte	RABGAP1L	8
+leukocyte	monocyte	GNG2	9
+leukocyte	monocyte	SLFN5	10
+leukocyte	mononuclear cell	MTSS1	1
+leukocyte	mononuclear cell	ZEB2	2
+leukocyte	mononuclear cell	RAP1B	3
+leukocyte	mononuclear cell	STK10	4
+leukocyte	mononuclear cell	MYO1F	5
+leukocyte	mononuclear cell	LCP2	6
+leukocyte	mononuclear cell	LYN	7
+leukocyte	mononuclear cell	GBP2	8
+leukocyte	mononuclear cell	CAST	9
+leukocyte	mononuclear cell	PTPRC	10
+leukocyte	T cell	LYN	1
+leukocyte	T cell	ZEB2	2
+leukocyte	T cell	DOCK5	3
+leukocyte	T cell	MTSS1	4
+leukocyte	T cell	MT-CO1	5
+leukocyte	T cell	FNDC3B	6
+leukocyte	T cell	NEAT1	7
+leukocyte	T cell	MYO1F	8
+leukocyte	T cell	CYRIA	9
+leukocyte	T cell	STK10	10
+lymphocyte	B cell	CD247	1
+lymphocyte	B cell	PRKCH	2
+lymphocyte	B cell	FYN	3
+lymphocyte	B cell	SYTL3	4
+lymphocyte	B cell	STAT4	5
+lymphocyte	B cell	AOAH	6
+lymphocyte	B cell	KLRD1	7
+lymphocyte	B cell	TGFBR3	8
+lymphocyte	B cell	NKG7	9
+lymphocyte	B cell	GNLY	10
+lymphocyte	leukocyte	CST7	1
+lymphocyte	leukocyte	NKG7	2
+lymphocyte	leukocyte	RPS27A	3
+lymphocyte	leukocyte	GZMB	4
+lymphocyte	leukocyte	GNLY	5
+lymphocyte	leukocyte	GZMM	6
+lymphocyte	leukocyte	HLA-A	7
+lymphocyte	leukocyte	B2M	8
+lymphocyte	leukocyte	HLA-B	9
+lymphocyte	leukocyte	CTSW	10
+lymphocyte	macrophage	CD247	1
+lymphocyte	macrophage	SYNE2	2
+lymphocyte	macrophage	STAT4	3
+lymphocyte	macrophage	SYNE1	4
+lymphocyte	macrophage	PRKCH	5
+lymphocyte	macrophage	GNLY	6
+lymphocyte	macrophage	NKG7	7
+lymphocyte	macrophage	TGFBR3	8
+lymphocyte	macrophage	GZMB	9
+lymphocyte	macrophage	CST7	10
+lymphocyte	monocyte	CD247	1
+lymphocyte	monocyte	SLC38A1	2
+lymphocyte	monocyte	PRKCH	3
+lymphocyte	monocyte	STAT4	4
+lymphocyte	monocyte	SYNE2	5
+lymphocyte	monocyte	ETS1	6
+lymphocyte	monocyte	PPP1R16B	7
+lymphocyte	monocyte	SYNE1	8
+lymphocyte	monocyte	RORA	9
+lymphocyte	monocyte	SKAP1	10
+lymphocyte	mononuclear cell	CD247	1
+lymphocyte	mononuclear cell	SYNE2	2
+lymphocyte	mononuclear cell	FYN	3
+lymphocyte	mononuclear cell	PRKCH	4
+lymphocyte	mononuclear cell	SYNE1	5
+lymphocyte	mononuclear cell	MCTP2	6
+lymphocyte	mononuclear cell	SKAP1	7
+lymphocyte	mononuclear cell	NKG7	8
+lymphocyte	mononuclear cell	KLRD1	9
+lymphocyte	mononuclear cell	GNLY	10
+lymphocyte	T cell	ZEB2	1
+lymphocyte	T cell	NKG7	2
+lymphocyte	T cell	GZMB	3
+lymphocyte	T cell	EFHD2	4
+lymphocyte	T cell	CST7	5
+lymphocyte	T cell	KLRD1	6
+lymphocyte	T cell	GNLY	7
+lymphocyte	T cell	FGFBP2	8
+lymphocyte	T cell	GNG2	9
+lymphocyte	T cell	MCTP2	10
+macrophage	B cell	DOCK5	1
+macrophage	B cell	NEAT1	2
+macrophage	B cell	ETV6	3
+macrophage	B cell	LYZ	4
+macrophage	B cell	PLXDC2	5
+macrophage	B cell	ZMIZ1	6
+macrophage	B cell	RBM47	7
+macrophage	B cell	ARHGAP26	8
+macrophage	B cell	PLAUR	9
+macrophage	B cell	PTPRE	10
+macrophage	leukocyte	PID1	1
+macrophage	leukocyte	LYZ	2
+macrophage	leukocyte	JARID2	3
+macrophage	leukocyte	ADAM28	4
+macrophage	leukocyte	IL1R1	5
+macrophage	leukocyte	ETV6	6
+macrophage	leukocyte	SERINC5	7
+macrophage	leukocyte	GPR183	8
+macrophage	leukocyte	MAML3	9
+macrophage	leukocyte	VEGFA	10
+macrophage	lymphocyte	RBM47	1
+macrophage	lymphocyte	RAB31	2
+macrophage	lymphocyte	GAB2	3
+macrophage	lymphocyte	ETV6	4
+macrophage	lymphocyte	LYZ	5
+macrophage	lymphocyte	KYNU	6
+macrophage	lymphocyte	ANTXR2	7
+macrophage	lymphocyte	EMILIN2	8
+macrophage	lymphocyte	PID1	9
+macrophage	lymphocyte	CDK14	10
+macrophage	monocyte	ANKH	1
+macrophage	monocyte	ADAM28	2
+macrophage	monocyte	CIITA	3
+macrophage	monocyte	BCAR3	4
+macrophage	monocyte	TRIO	5
+macrophage	monocyte	AUTS2	6
+macrophage	monocyte	ZEB1	7
+macrophage	monocyte	ZNF516	8
+macrophage	monocyte	ARHGAP10	9
+macrophage	monocyte	NR4A3	10
+macrophage	mononuclear cell	PID1	1
+macrophage	mononuclear cell	ATP2B1	2
+macrophage	mononuclear cell	HIPK2	3
+macrophage	mononuclear cell	FNDC3B	4
+macrophage	mononuclear cell	DOCK4	5
+macrophage	mononuclear cell	MYO1F	6
+macrophage	mononuclear cell	EPB41L3	7
+macrophage	mononuclear cell	NEAT1	8
+macrophage	mononuclear cell	MTSS1	9
+macrophage	mononuclear cell	ABCA1	10
+macrophage	T cell	RAB31	1
+macrophage	T cell	RBM47	2
+macrophage	T cell	ZMIZ1	3
+macrophage	T cell	KYNU	4
+macrophage	T cell	LYZ	5
+macrophage	T cell	JARID2	6
+macrophage	T cell	ETV6	7
+macrophage	T cell	PLXDC2	8
+macrophage	T cell	PID1	9
+macrophage	T cell	MEF2C	10
+monocyte	B cell	DOCK5	1
+monocyte	B cell	NEAT1	2
+monocyte	B cell	PLAUR	3
+monocyte	B cell	MYO1F	4
+monocyte	B cell	TYROBP	5
+monocyte	B cell	RNF130	6
+monocyte	B cell	ZEB2	7
+monocyte	B cell	ITGAX	8
+monocyte	B cell	PTPRE	9
+monocyte	B cell	MACROH2A1	10
+monocyte	leukocyte	LYZ	1
+monocyte	leukocyte	PID1	2
+monocyte	leukocyte	CSF3R	3
+monocyte	leukocyte	S100A9	4
+monocyte	leukocyte	JARID2	5
+monocyte	leukocyte	DOCK4	6
+monocyte	leukocyte	HIF1A	7
+monocyte	leukocyte	VCAN	8
+monocyte	leukocyte	SRGN	9
+monocyte	leukocyte	PLAUR	10
+monocyte	lymphocyte	GAB2	1
+monocyte	lymphocyte	RAB31	2
+monocyte	lymphocyte	EMILIN2	3
+monocyte	lymphocyte	KYNU	4
+monocyte	lymphocyte	PLAUR	5
+monocyte	lymphocyte	ANTXR2	6
+monocyte	lymphocyte	RBM47	7
+monocyte	lymphocyte	HCK	8
+monocyte	lymphocyte	SPI1	9
+monocyte	lymphocyte	IFI30	10
+monocyte	macrophage	CTSS	1
+monocyte	macrophage	SERPINA1	2
+monocyte	macrophage	LST1	3
+monocyte	macrophage	FCER1G	4
+monocyte	macrophage	TKT	5
+monocyte	macrophage	TYROBP	6
+monocyte	macrophage	FTH1	7
+monocyte	macrophage	S100A4	8
+monocyte	macrophage	OAZ1	9
+monocyte	macrophage	FTL	10
+monocyte	mononuclear cell	ATP2B1	1
+monocyte	mononuclear cell	ABCA1	2
+monocyte	mononuclear cell	MYO1F	3
+monocyte	mononuclear cell	SLC11A1	4
+monocyte	mononuclear cell	CHST15	5
+monocyte	mononuclear cell	CTSS	6
+monocyte	mononuclear cell	MTSS1	7
+monocyte	mononuclear cell	TBXAS1	8
+monocyte	mononuclear cell	PRKAG2	9
+monocyte	mononuclear cell	UPP1	10
+monocyte	T cell	RAB31	1
+monocyte	T cell	KYNU	2
+monocyte	T cell	PLAUR	3
+monocyte	T cell	NEAT1	4
+monocyte	T cell	EMILIN2	5
+monocyte	T cell	RBM47	6
+monocyte	T cell	IFI30	7
+monocyte	T cell	SPI1	8
+monocyte	T cell	HCK	9
+monocyte	T cell	CHST15	10
+mononuclear cell	B cell	SULF2	1
+mononuclear cell	B cell	PTPRE	2
+mononuclear cell	B cell	GNAQ	3
+mononuclear cell	B cell	RRBP1	4
+mononuclear cell	B cell	ETV6	5
+mononuclear cell	B cell	CCDC88A	6
+mononuclear cell	B cell	INPP4A	7
+mononuclear cell	B cell	BID	8
+mononuclear cell	B cell	GNA15	9
+mononuclear cell	B cell	RUNX2	10
+mononuclear cell	leukocyte	CIITA	1
+mononuclear cell	leukocyte	GPR183	2
+mononuclear cell	leukocyte	RUNX2	3
+mononuclear cell	leukocyte	ADAM19	4
+mononuclear cell	leukocyte	SEC61B	5
+mononuclear cell	leukocyte	LGMN	6
+mononuclear cell	leukocyte	SLC41A2	7
+mononuclear cell	leukocyte	FLT3	8
+mononuclear cell	leukocyte	AFF3	9
+mononuclear cell	leukocyte	MCOLN2	10
+mononuclear cell	lymphocyte	SULF2	1
+mononuclear cell	lymphocyte	MEF2C	2
+mononuclear cell	lymphocyte	CCDC88A	3
+mononuclear cell	lymphocyte	RUNX2	4
+mononuclear cell	lymphocyte	CIITA	5
+mononuclear cell	lymphocyte	ETV6	6
+mononuclear cell	lymphocyte	CD74	7
+mononuclear cell	lymphocyte	RBM47	8
+mononuclear cell	lymphocyte	LDLRAD4	9
+mononuclear cell	lymphocyte	GPR183	10
+mononuclear cell	macrophage	IRF8	1
+mononuclear cell	macrophage	POLB	2
+mononuclear cell	macrophage	FCHSD2	3
+mononuclear cell	macrophage	FHIP1A	4
+mononuclear cell	macrophage	SEC61B	5
+mononuclear cell	macrophage	SEL1L3	6
+mononuclear cell	macrophage	SLC41A2	7
+mononuclear cell	macrophage	IRF4	8
+mononuclear cell	macrophage	RFTN1	9
+mononuclear cell	macrophage	C12orf75	10
+mononuclear cell	monocyte	SLC38A1	1
+mononuclear cell	monocyte	RFTN1	2
+mononuclear cell	monocyte	SLC41A2	3
+mononuclear cell	monocyte	MCOLN2	4
+mononuclear cell	monocyte	PPP1R16B	5
+mononuclear cell	monocyte	IRF8	6
+mononuclear cell	monocyte	FCHSD2	7
+mononuclear cell	monocyte	FHIP1A	8
+mononuclear cell	monocyte	SEL1L3	9
+mononuclear cell	monocyte	FLT3	10
+mononuclear cell	T cell	SULF2	1
+mononuclear cell	T cell	MEF2C	2
+mononuclear cell	T cell	CCDC88A	3
+mononuclear cell	T cell	CD74	4
+mononuclear cell	T cell	IRF8	5
+mononuclear cell	T cell	CIITA	6
+mononuclear cell	T cell	ETV6	7
+mononuclear cell	T cell	GNA12	8
+mononuclear cell	T cell	PTPRE	9
+mononuclear cell	T cell	RBM47	10
+T cell	B cell	PRKCH	1
+T cell	B cell	FYN	2
+T cell	B cell	CD247	3
+T cell	B cell	BCL11B	4
+T cell	B cell	ITK	5
+T cell	B cell	LEPROTL1	6
+T cell	B cell	AAK1	7
+T cell	B cell	RORA	8
+T cell	B cell	IL7R	9
+T cell	B cell	FYB1	10
+T cell	leukocyte	LEPROTL1	1
+T cell	leukocyte	SARAF	2
+T cell	leukocyte	RPS27A	3
+T cell	leukocyte	RPL13	4
+T cell	leukocyte	RPL3	5
+T cell	leukocyte	RPSA	6
+T cell	leukocyte	RPS26	7
+T cell	leukocyte	RPL17	8
+T cell	leukocyte	RPS3	9
+T cell	leukocyte	CAMK4	10
+T cell	lymphocyte	CAMK4	1
+T cell	lymphocyte	IL7R	2
+T cell	lymphocyte	ZEB1	3
+T cell	lymphocyte	TPT1	4
+T cell	lymphocyte	SERINC5	5
+T cell	lymphocyte	BCL11B	6
+T cell	lymphocyte	RPL13	7
+T cell	lymphocyte	RPL39	8
+T cell	lymphocyte	RPS8	9
+T cell	lymphocyte	PDE3B	10
+T cell	macrophage	LEPROTL1	1
+T cell	macrophage	CD247	2
+T cell	macrophage	ETS1	3
+T cell	macrophage	SARAF	4
+T cell	macrophage	ITK	5
+T cell	macrophage	SLC38A1	6
+T cell	macrophage	PIK3IP1	7
+T cell	macrophage	BCL11B	8
+T cell	macrophage	CLEC2D	9
+T cell	macrophage	SPOCK2	10
+T cell	monocyte	SLC38A1	1
+T cell	monocyte	CD247	2
+T cell	monocyte	ETS1	3
+T cell	monocyte	LEPROTL1	4
+T cell	monocyte	PRKCH	5
+T cell	monocyte	BCL11B	6
+T cell	monocyte	ITK	7
+T cell	monocyte	RORA	8
+T cell	monocyte	STAT4	9
+T cell	monocyte	CLEC2D	10
+T cell	mononuclear cell	CD247	1
+T cell	mononuclear cell	FYN	2
+T cell	mononuclear cell	BCL11B	3
+T cell	mononuclear cell	LEPROTL1	4
+T cell	mononuclear cell	ITK	5
+T cell	mononuclear cell	PIK3IP1	6
+T cell	mononuclear cell	CLEC2D	7
+T cell	mononuclear cell	CCSER2	8
+T cell	mononuclear cell	CD96	9
+T cell	mononuclear cell	SKAP1	10
