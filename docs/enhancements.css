@@ -1,0 +1,88 @@
+.diagnostic-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.explorer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.explorer-nav a {
+  padding: 10px 14px;
+  border: 1px solid #adc2ac;
+  background: #e8f1df;
+  color: #163333;
+  font-size: 13px;
+  font-weight: 700;
+}
+.real-section { margin: 36px 0 20px; }
+.real-section h3 { font: 400 30px 'DM Serif Display', Georgia, serif; margin: 0; }
+.real-section > p:not(.eyebrow) { color: #516b60; line-height: 1.6; }
+
+.math-workbench {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.math-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #dce7d9;
+  background: #f7f9f4;
+}
+
+.math-card h4 {
+  margin: 10px 0;
+  font: 400 24px 'DM Serif Display', Georgia, serif;
+}
+
+.math-card p {
+  color: #536d5b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.math-card svg {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 12px auto;
+  background: #fffefa;
+}
+
+.math-diagonal { stroke: #b7c8b7; stroke-width: 1; stroke-dasharray: 4 4; }
+.math-point { fill: #386b4d; stroke: #fff; stroke-width: 1.5; }
+.math-point-label { fill: #244a3a; font: 12px 'DM Sans', sans-serif; font-weight: 700; }
+.math-formula { overflow-wrap: anywhere; font-family: Georgia, serif; }
+.math-result { border-left: 3px solid #72956e; background: #eaf2e5; padding: 12px; font-size: 12px; line-height: 1.6; }
+.quantile-chart { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.quantile-item { min-width: 70px; padding: 10px; background: #fffefa; border: 1px solid #d5e0d2; }
+.quantile-item span, .quantile-item strong { display: block; font-size: 12px; }
+.quantile-item strong { margin-top: 5px; }
+.quantile-used { border-color: #427350; background: #eaf2e5; }
+
+.reference-means,
+.marker-footnote,
+.toy-hint,
+.example-actions button,
+.cell-prediction,
+.legend-item {
+  font-size: 12px !important;
+}
+
+@media (max-width: 850px) {
+  .math-workbench { grid-template-columns: 1fr; }
+  .diagnostic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+  }
+}
