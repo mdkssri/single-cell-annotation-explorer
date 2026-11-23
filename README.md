@@ -1,6 +1,11 @@
 # Single-Cell Annotation Explorer
 
-Static SingleR teaching app. Serve this folder with python -m http.server 8771 --bind 127.0.0.1 and open http://127.0.0.1:8771/docs/.
+**[Live demo](https://mdkssri.github.io/single-cell-annotation-explorer/)**
+
+Static SingleR teaching app.
+
+**Local preview only:** From the repository root, run `python -m http.server 8771 --bind 127.0.0.1`, then open the address printed by the terminal and select `docs/`.
+
 GitHub Pages: upload this folder contents, not the folder itself, then select main and /docs in Settings > Pages. Do not upload the original project folder or raw data.
 
 ## Results
