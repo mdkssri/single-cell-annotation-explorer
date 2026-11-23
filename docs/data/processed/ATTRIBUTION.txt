@@ -1,0 +1,6 @@
+Data: 10x Genomics (2024), 5k Human PBMCs (Donor 1) with Automated Cell Annotation and 5k Human PBMCs (Donor 2), Cell Ranger 9.0.0.
+https://www.10xgenomics.com/datasets/5k_Human_Donor1_PBMC_3p_gem-x
+https://www.10xgenomics.com/datasets/5k_Human_Donor2_PBMC_3p_gem-x
+License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Changes: donor-separated reference and query; deterministic subsetting; SingleR scoring, query PCA, and reference-expression summaries. Public files replace original barcodes with project IDs and omit donor and sample columns.
+Reference labels are 10x coarse automated labels, not ground truth. Donor 2 has no query truth labels. This teaching example does not establish generalization.
