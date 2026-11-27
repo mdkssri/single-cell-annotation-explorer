@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Annotate unlabeled PBMC cells with marker-guided EM and inspect uncertainty on a live PCA map.">
+  <title>Marker-guided annotation · PBMC Cluster Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="marker-lab.css?v=2">
+  <script defer src="pbmc.js"></script>
+  <script defer src="model.js"></script>
+  <script defer src="marker-model.js"></script>
+  <script defer src="marker-lab.js?v=2"></script>
+</head>
+<body>
+  <header><div class="wrap brand"><span aria-hidden="true">✳</span> PBMC Cluster Lab <small>BIOSTAT 615</small></div></header>
+  <main class="wrap">
+    <section class="intro"><a href="index.html">Back to the clustering lab</a><p class="eyebrow">MARKER-GUIDED ANNOTATION</p><h1>From gene counts <i>to cell types.</i></h1><p>Start with 256 unlabeled PBMC cells. Step through EM, then follow the cells whose gene counts support more than one candidate type.</p></section>
+    <noscript><p>Enable JavaScript to run marker-guided annotation.</p></noscript>
+    <div class="lab" aria-label="Marker annotation workbench">
+      <section class="panel map-panel" aria-labelledby="marker-map-title">
+        <div class="plot-head"><div><h2 id="marker-map-title">Round 1 · Annotation map</h2><p id="axes" class="muted">256 cells · 7 marker genes · 3 candidate types</p></div><button class="primary" type="button" id="initialize">Initialize model</button></div>
+        <div class="chart"><canvas id="marker-plot" role="img" aria-label="PCA scatter plot colored by cell annotation and uncertainty. Use the cell menu for keyboard access."></canvas>
+          <div id="plot-empty" class="plot-empty"><div class="cell-motif" aria-hidden="true"><i></i><i></i><i></i></div><strong>Start with the raw counts</strong><span>Initialize the marker model and compute the display PCA.</span></div>
+        </div>
+        <div id="legend" class="legend"></div>
+        <p class="muted">Split dots show the first candidate on the right and the second on the left. Select a dot to compare their probabilities. Gray hollow dots are Unassigned.</p>
+        <div class="selection"><label for="cell">Selected cell</label><select id="cell"></select></div>
+        <div class="mixed-nav" role="group" aria-label="Browse mixed-color cells">
+          <button class="secondary" type="button" id="previous-mixed" disabled>Previous mixed cell</button>
+          <button class="secondary" type="button" id="find" disabled>Next mixed cell</button>
+          <span class="muted" id="mixed-position" role="status"></span>
+        </div>
+      </section>
+      <aside class="controls">
+        <section class="panel control-panel"><h2>EM controls</h2><p class="muted" id="phase">Initialize to start from the same raw count panel.</p>
+          <div class="pair"><button type="button" class="secondary" id="e-step" disabled>Run E-step</button><button type="button" class="secondary" id="m-step" disabled>Run M-step</button></div>
+          <div class="pair"><button type="button" class="primary" id="auto" disabled>Auto-step EM</button><button type="button" class="secondary" id="reset" disabled>Reset</button></div>
+          <div class="likelihood"><span>Batch log-likelihood*</span><strong id="likelihood">—</strong></div>
+          <p id="progress" class="muted"></p><p class="muted">*Up to an additive constant.</p>
+        </section>
+        <section class="panel control-panel"><h2>Anchor threshold</h2><label for="threshold">Minimum model probability <output id="threshold-value">95%</output></label>
+          <input id="threshold" type="range" min="80" max="99" step="1" value="95">
+          <div id="totals" class="marker-metrics"></div>
+          <p class="muted">This slider changes which points qualify as anchors. It reuses the last E-step probabilities.</p>
+        </section>
+      </aside>
+    </div>
+    <p id="status" class="status" role="status"></p>
+    <section class="panel marker-detail" aria-labelledby="detail-title">
+      <div class="plot-head"><div><p class="eyebrow">TRACE ONE CELL</p><h2 id="detail-title"></h2></div><p id="detail-status" class="muted"></p></div>
+      <div class="marker-evidence">
+        <section><h3>Raw marker counts</h3><div id="marker-counts" class="marker-counts"></div></section>
+        <section><h3>First-round model probabilities</h3><div id="probabilities"></div></section>
+      </div>
+      <details id="numeric" open>
+        <summary>Show the current EM calculation</summary>
+        <div id="equations"></div>
+      </details>
+    </section>
+    <details class="panel optional-review">
+      <summary>Optional round 2 · Review a mixed-color cell</summary>
+      <p class="muted">Use other genes to check whether the selected cell fits the expression pattern of the first-round anchors. The first-round map keeps its original probabilities and labels.</p>
+      <button class="secondary" type="button" id="review" disabled>Review ambiguous cells</button>
+      <p id="review-result" class="muted"></p>
+    </details>
+    <details class="methods"><summary>Data and model assumptions</summary>
+      <p>The dataset is a fixed random subset of filtered cells from 10x Genomics Donor 1. Reference cell labels are absent from this fit. The marker list supplies the candidate type names. PCA uses the selected expression panel for display, and EM uses raw counts from seven markers with each cell’s full-library total as a depth offset.</p>
+      <p>This teaching implementation is inspired by CellAssign. It uses a fixed negative-binomial size of 2, and learns a background expression rate and a marker-enriched rate for each gene. Enriched rates are constrained to be at least the background rates. Unassigned uses the background rates for all markers. The E-step computes all four responsibilities and the M-step updates rates and proportions. Fit is judged within this model.</p>
+      <p>The optional review computes a separate PCA that excludes the first-round marker genes. It needs at least five anchors per biological type. A cell is marked as supported when the winning type agrees with the first-round leader, has probability at least 90% in the review model, and falls within the anchor-based distance limit. The review is a cross-check on the same cells.</p>
+      <p>Method inspiration <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7485597/">CellAssign</a> · Dataset <a href="https://www.10xgenomics.com/datasets/5k_Human_Donor1_PBMC_3p_gem-x">10x Genomics Donor 1 PBMC</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+    </details>
+  </main>
+</body>
+</html>

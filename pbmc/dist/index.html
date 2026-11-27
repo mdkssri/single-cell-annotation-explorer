@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive PBMC clustering lab. Compute PCA in your browser and step through a Gaussian mixture fit using EM.">
+  <title>PBMC Cluster Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="pbmc.js"></script>
+  <script defer src="model.js"></script>
+  <script defer src="lab.js"></script>
+</head>
+<body>
+  <header><div class="wrap brand"><span aria-hidden="true">✳</span> PBMC Cluster Lab <small>BIOSTAT 615</small></div></header>
+  <main class="wrap">
+    <section class="intro"><p class="eyebrow">LIVE CELL CLUSTERING</p><h1>Find the groups <i>in the cells.</i></h1><p>Start with real gene counts. Run PCA, then use expectation–maximization to see which cells belong together and why a boundary cell might switch groups.</p></section>
+    <p class="muted"><a href="two-round.html">Open the two-round annotation lab</a></p>
+    <noscript><p>Enable JavaScript to run the experiment.</p></noscript>
+    <section id="lab" class="lab" aria-label="Clustering workbench">
+      <section class="panel plot-panel" aria-labelledby="plot-title">
+        <div class="plot-head"><div><h2 id="plot-title">Expression map</h2><p id="axes" class="muted">256 cells · 160 genes · counts ready</p></div><button id="pca" class="primary" type="button">Run PCA</button></div>
+        <div class="chart"><canvas id="plot" role="img" aria-label="PCA scatter plot. Choose a cell using the menu below to access the same information by keyboard."></canvas>
+          <div id="plot-empty" class="plot-empty"><div class="cell-motif" aria-hidden="true"><i></i><i></i><i></i></div><strong>Start from the count matrix</strong><span>Run PCA to place each cell on the map.</span></div>
+        </div>
+        <div id="legend" class="legend" aria-label="Cluster legend"></div>
+        <div class="selection">
+          <label for="cell-select">Selected cell</label><select id="cell-select"></select><span id="picked"></span>
+          <button type="button" class="secondary" id="inspect">Inspect cell</button>
+        </div>
+        <details class="live-formulas" id="main-formulas" open hidden>
+          <summary>EM calculations for the selected cell</summary>
+          <label for="main-formula-cluster">Cluster to trace <select id="main-formula-cluster"></select></label>
+          <div id="main-formula-values"></div>
+        </details>
+      </section>
+      <aside class="controls">
+        <section class="panel control-panel">
+          <h2>Clustering settings</h2><p class="muted">Weight the squared PC distances used by the Gaussian mixture.</p>
+          <label class="k-label" for="k">Number of clusters <input id="k" type="number" step="1" value="4" min="2" max="8" required></label>
+          <div id="weights" class="weights"></div>
+          <button class="primary" id="initialize" type="button" disabled>Initialize mixture</button>
+          <p class="muted" id="settings-note">1 uses the original PC scale. 0 omits that axis from the fit.</p>
+        </section>
+        <section class="panel control-panel">
+          <h2>EM playback</h2><p id="phase" class="muted"></p>
+          <div class="pair"><button id="e" type="button" class="secondary" disabled>Run E-step</button><button id="m" type="button" class="secondary" disabled>Run M-step</button></div>
+          <div class="pair"><button id="play" type="button" class="primary" disabled>Play EM</button><button id="pin" type="button" class="secondary" disabled>Pin fit</button></div>
+          <div class="likelihood"><span>Batch log-likelihood</span><strong id="likelihood">—</strong></div>
+          <canvas id="trend" role="img" aria-label="Batch log-likelihood over completed M-steps"></canvas>
+          <p id="progress" class="muted"></p>
+        </section>
+      </aside>
+    </section>
+    <section id="cell-detail" class="panel detail" aria-labelledby="detail-title" tabindex="-1" hidden>
+      <button class="secondary" id="back" type="button">Back to expression map</button>
+      <div class="plot-head"><div><p class="eyebrow">CELL CLUSTERING EXPERIMENT</p><h2 id="detail-title"></h2><p id="detail-context" class="muted"></p></div><button id="experiment-reset" class="secondary" type="button">Restore defaults</button></div>
+      <ol id="experiment-steps" class="experiment-steps" aria-label="Experiment progress"><li>PC weights</li><li>Cluster count</li><li>Fit and trace EM</li></ol>
+      <div class="detail-layout">
+        <section class="detail-block"><h3>Selected cell’s PCA coordinates</h3><div id="coordinates" class="coordinates"></div>
+          <div class="chart experiment-map"><canvas id="experiment-plot" role="img" aria-label="Selected cell and initial or updated cluster centers on the PCA map"></canvas></div>
+          <p class="muted">The ring marks this cell. Lines show the two displayed PCs. The likelihood calculation includes every PC with positive weight.</p>
+          <details><summary>Measured gene counts</summary><div class="plot-head"><p class="muted">Raw UMI counts and normalized expression.</p><label for="gene-mode">Genes <select id="gene-mode"><option value="markers">Marker examples</option><option value="all">All 160 genes</option></select></label></div><div id="gene-bars" class="gene-bars"></div></details>
+        </section>
+        <section class="detail-block experiment-controls" aria-label="Experiment controls">
+          <div id="experiment-weight-step">
+            <h3>Choose how much each PC counts</h3><p class="muted">Use 0 to omit a PC and 1 for its original scale. Keep at least one positive weight.</p>
+            <div id="experiment-weights" class="weights"></div>
+            <button id="experiment-next" class="primary" type="button">Next: choose cluster count</button>
+          </div>
+          <div id="experiment-k-step" hidden>
+            <h3>Choose how many clusters to fit</h3><p class="muted">Initialize centers from the full batch of 256 cells. The selected cell gets its first cluster probabilities in the E-step.</p>
+            <label class="k-label" for="experiment-k">Number of clusters <input id="experiment-k" type="number" value="4" min="2" max="8" step="1" required></label>
+            <div class="experiment-actions"><button id="experiment-previous" class="secondary" type="button">Back to weights</button><button id="experiment-initialize" class="primary" type="button">Initialize model</button></div>
+          </div>
+          <div id="experiment-fit-step" hidden>
+            <h3>Follow this cell through EM</h3><p id="experiment-phase" class="muted"></p>
+            <div class="experiment-metrics"><span id="experiment-round"></span><span id="experiment-likelihood"></span></div>
+            <div class="experiment-actions"><button id="experiment-e" class="primary" type="button">Run E-step</button><button id="experiment-m" class="primary" type="button">Run M-step</button><button id="experiment-auto" class="secondary" type="button">Auto-step EM</button></div>
+            <div class="experiment-actions"><button id="experiment-repeat" class="secondary" type="button">Restart from round 0</button><button id="experiment-edit" class="secondary" type="button">Change settings and rerun</button></div>
+            <div id="cell-scores"></div>
+          </div>
+          <p id="experiment-status" class="status" role="status"></p>
+        </section>
+      </div>
+    </section>
+    <p id="status" class="status" role="status"></p>
+    <details class="methods"><summary>Data, model and performance</summary>
+      <p>A fixed random sample of 256 cells with positive library size was drawn from the filtered Donor 1 matrix. The panel contains eight illustrative marker genes and the remaining most variable genes on normalized log expression. The browser uses raw counts and each cell’s full-library total, then computes centered PCA itself. The analysis uses the first four PC scores and fits a spherical Gaussian per cluster in the weighted PC space.</p>
+      <p>E-step updates each cell’s cluster probabilities. M-step updates the centers, variances and mixing proportions. Ellipses show one standard deviation along the two plotted axes. Cluster IDs describe this fit and carry no cell-type names. The cell inspector scores expression through the PC coordinates.</p>
+      <p>PCA runs once per page load. Changing the weights or cluster count reuses the PCA scores. Each EM iteration takes time proportional to cells × clusters × retained PCs. Likelihood traces are for the current settings.</p>
+      <p>Source <a href="https://www.10xgenomics.com/datasets/5k_Human_Donor1_PBMC_3p_gem-x">10x Genomics, 5k Human PBMCs (Donor 1)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The lab exports a teaching subset of counts with project cell IDs.</p>
+    </details>
+  </main>
+</body>
+</html>

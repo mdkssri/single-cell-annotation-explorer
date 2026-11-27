@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light;
+  --bg: #eef3ef;
+  --ink: #142b28;
+  --muted: #4d6660;
+  --line: #cbd8d1;
+  --paper: #fff;
+  --tint: #f5f9f6;
+  --accent: #146c69;
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; line-height: 1.5; }
+.wrap { width: min(1350px, 100% - 48px); margin-inline: auto; }
+header { background: #173b36; color: white; }
+.brand { display: flex; align-items: center; gap: .65rem; min-height: 62px; font-weight: 750; }
+.brand > span { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; color: #183b35; background: #c3e6a9; }
+.brand small { margin-left: auto; color: #d2e5d7; letter-spacing: .12em; font: 700 .78rem ui-monospace, monospace; }
+h1, h2, h3, p { margin: 0; }
+.intro { padding: clamp(1.45rem, 4.5vw, 3.4rem) 0 clamp(1.2rem, 3vw, 2rem); }
+.eyebrow { color: var(--accent); font: 750 .8rem ui-monospace, monospace; letter-spacing: .11em; }
+.intro h1 { font-family: Georgia, serif; font-weight: 500; letter-spacing: -.055em; font-size: clamp(2.7rem, 6vw, 5.6rem); line-height: 1.04; margin: .25rem 0 .55rem; }
+.intro h1 i { color: var(--accent); }
+.intro > p:last-child { max-width: 72ch; color: var(--muted); }
+.lab { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(250px, .95fr); gap: .85rem; align-items: start; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 13px; padding: clamp(.72rem, 2vw, 1.1rem); }
+.plot-head, .selection, .likelihood { display: flex; align-items: center; justify-content: space-between; gap: .5rem .75rem; flex-wrap: wrap; }
+h2 { font-size: 1.23rem; letter-spacing: -.025em; }
+h3 { font-size: 1.05rem; }
+.muted { color: var(--muted); font-size: .9rem; }
+.controls { display: grid; gap: .75rem; }
+.control-panel { display: grid; gap: .55rem; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: .47; cursor: default; }
+:focus-visible { outline: 3px solid #986325; outline-offset: 3px; }
+.primary, .secondary { padding: .53rem .8rem; min-height: 42px; border-radius: 7px; font-weight: 750; }
+.primary { color: white; background: #155b54; border: 1px solid #155b54; }
+.primary:hover:enabled { background: #0c4943; }
+.secondary { background: var(--tint); color: var(--ink); border: 1px solid #a9bdb3; }
+.secondary:hover:enabled { background: #e5f1e9; }
+select, input[type="number"] { border: 1px solid #9db7ad; background: var(--tint); border-radius: 6px; min-height: 38px; color: var(--ink); padding: .25rem .45rem; }
+.k-label { display: flex; align-items: center; justify-content: space-between; gap: .55rem; font-weight: 650; }
+.k-label input { width: 4.55rem; }
+.weights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .38rem .55rem; }
+.weights label { display: grid; gap: .15rem; color: var(--muted); font-size: .88rem; }
+.weights input { width: 100%; font-variant-numeric: tabular-nums; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; }
+.likelihood { padding-top: .55rem; border-top: 1px solid var(--line); font-size: .87rem; }
+.likelihood strong { font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.chart { position: relative; margin-top: .65rem; background: var(--tint); border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+#plot { display: block; width: 100%; height: clamp(300px, 44vw, 515px); }
+#trend { display: block; width: 100%; height: 65px; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(to top, #f4faf5 0 15px, #e7efe9 15px 16px); }
+.plot-empty { position: absolute; inset: 0; display: flex; flex-direction: column; gap: .35rem; justify-content: center; align-items: center; color: var(--muted); text-align: center; padding: .7rem; background: radial-gradient(#d4e3d9 1px, transparent 1px) 0 0 / 15px 15px; }
+.plot-empty strong { color: var(--ink); font-size: 1.13rem; }
+.cell-motif { position: relative; width: 95px; height: 95px; margin-bottom: .4rem; background: #d7eee2; border: 2px solid var(--accent); border-radius: 55% 45% 49% 51%; box-shadow: 0 0 0 9px #e1eee7; transform: rotate(-12deg); }
+.cell-motif i { position: absolute; inset: 24% 34% 36% 28%; border-radius: 50%; background: #75b5a2; }
+.cell-motif i:nth-child(2) { inset: 52% 19% 29% 63%; background: #83a1cf; }
+.cell-motif i:nth-child(3) { inset: 54% 65% 27% 17%; background: #e0b07e; }
+.legend { display: flex; flex-wrap: wrap; gap: .25rem .85rem; min-height: .65rem; margin-block: .4rem; font-size: .84rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: .28rem; }
+.legend i { display: block; width: .68rem; height: .68rem; border-radius: 50%; background: var(--cluster); }
+.selection { justify-content: flex-start; }
+.selection label { font-weight: 650; }
+.selection span { color: var(--muted); font-size: .85rem; }
+.selection button { margin-left: auto; }
+.live-formulas { margin-top: .75rem; padding-top: .55rem; border-top: 1px solid var(--line); }
+.live-formulas > label { display: block; margin-top: .4rem; color: var(--muted); font-size: .9rem; }
+.formula-readout h4 { margin: .65rem 0 .2rem; color: var(--accent); }
+.formula-readout .equation { display: grid; gap: .15rem; padding: .3rem 0; }
+.formula-readout .equation dt { color: var(--muted); }
+.formula-readout .equation dd { overflow-wrap: anywhere; padding: .28rem .38rem; background: var(--tint); border-radius: 5px; font: 600 .85rem/1.5 ui-monospace, Consolas, monospace; }
+.convergence { color: var(--muted); font-size: .88rem; }
+.convergence.converged { font-weight: 700; color: var(--accent); }
+.status { min-height: 1.55rem; margin-top: .5rem; color: #1c5951; font-weight: 650; }
+.methods { margin: .35rem 0 2.25rem; padding-top: .5rem; border-top: 1px solid var(--line); color: var(--muted); }
+.methods p { max-width: 94ch; margin-top: .4rem; }
+a { color: #16675f; }
+summary { width: fit-content; cursor: pointer; font-weight: 700; }
+.detail > .plot-head { margin: .8rem 0; }
+.experiment-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; padding: 0; margin: 0 0 .75rem; list-style: none; counter-reset: stage; }
+.experiment-steps li { counter-increment: stage; display: flex; align-items: center; gap: .38rem; padding: .35rem .48rem; color: var(--muted); background: var(--tint); border: 1px solid var(--line); border-radius: 6px; font-size: .9rem; }
+.experiment-steps li::before { content: counter(stage); width: 1.32rem; height: 1.32rem; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: #dfece4; }
+.experiment-steps li[aria-current] { border-color: var(--accent); color: var(--ink); font-weight: 750; }
+.experiment-steps li[aria-current]::before { background: var(--accent); color: white; }
+.detail-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: .7rem; align-items: start; }
+.detail-block { border: 1px solid var(--line); border-radius: 8px; padding: .68rem; min-width: 0; }
+.detail-block label { font-size: .88rem; }
+.experiment-map { margin-bottom: .4rem; }
+#experiment-plot { display: block; width: 100%; height: clamp(220px, 30vw, 350px); }
+.experiment-controls h3 + p, .experiment-controls .weights, .experiment-controls .k-label, .experiment-controls .experiment-actions, .experiment-controls #experiment-next { margin-top: .55rem; }
+.experiment-actions, .experiment-metrics { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .55rem; }
+.experiment-metrics { margin: .55rem 0; }
+.experiment-metrics span { padding: .18rem .38rem; border-radius: 5px; background: var(--tint); font-size: .85rem; }
+#experiment-status:empty { display: none; }
+.coordinates .inactive-axis { outline: 1px dashed var(--line); color: var(--muted); }
+.gene-bars { display: grid; gap: .32rem; margin-top: .55rem; max-height: 450px; overflow: auto; padding-right: .2rem; }
+.gene { display: grid; grid-template-columns: minmax(4.6rem, 1fr) minmax(30px, 2fr) 2.05rem; gap: .3rem; align-items: baseline; font-size: .86rem; }
+.gene > div { align-self: center; height: 7px; background: #e4efe8; border-radius: 4px; }
+.gene i { display: block; width: var(--fill); height: 100%; border-radius: inherit; background: #39877c; }
+.gene > span { grid-column: 1 / -1; margin-top: -.25rem; color: var(--muted); }
+.coordinates, .distance { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .3rem; margin: .4rem 0 .65rem; }
+.coordinates span, .distance span { display: grid; padding: .35rem; background: var(--tint); border-radius: 6px; font-size: .85rem; }
+.coordinates small { color: var(--muted); }
+.distance small { color: var(--muted); overflow-wrap: anywhere; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; margin: .45rem 0; color: var(--muted); font-size: .87rem; }
+.comparison span { background: var(--tint); padding: .35rem; border-radius: 5px; }
+.comparison p { grid-column: 1 / -1; }
+.result { display: flex; flex-wrap: wrap; gap: .2rem .65rem; align-items: center; padding: .5rem; border-left: 4px solid var(--cluster); background: var(--tint); margin: .35rem 0; }
+.component-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem; margin-bottom: .55rem; }
+.component-list button { display: flex; justify-content: space-between; gap: .2rem; flex-wrap: wrap; border: 1px solid var(--line); border-left: 4px solid var(--cluster); border-radius: 5px; color: var(--ink); background: white; padding: .35rem; }
+.component-list button[aria-pressed="true"] { background: var(--tint); outline: 1px solid var(--cluster); }
+dl { margin: .4rem 0; }
+dl > div { display: flex; justify-content: space-between; gap: .5rem; padding: .2rem 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 780px) {
+  .wrap { width: calc(100% - 28px); }
+  .lab, .detail-layout { grid-template-columns: 1fr; }
+  .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 500px) {
+  .controls { grid-template-columns: 1fr; }
+  .selection button { margin-left: 0; }
+  .experiment-steps li { font-size: .78rem; }
+}

@@ -1,0 +1,32 @@
+.intro > a { display: inline-block; margin-bottom: .6rem; }
+.map-panel .selection { margin-top: .45rem; }
+.mixed-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .38rem; margin-top: .45rem; }
+#mixed-position { font-variant-numeric: tabular-nums; }
+#marker-plot { display: block; width: 100%; height: clamp(275px, 40vw, 485px); }
+.marker-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .28rem; }
+.marker-metrics div { padding: .24rem .37rem; background: var(--tint); border-radius: 5px; font-size: .82rem; }
+.marker-metrics b { display: block; font-size: 1.05rem; }
+#threshold { width: 100%; accent-color: var(--accent); }
+#threshold-value { font-weight: 750; color: var(--accent); }
+.marker-detail { margin-top: .55rem; }
+.marker-evidence { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .7rem; margin: .65rem 0; }
+.marker-evidence section { background: var(--tint); border: 1px solid var(--line); border-radius: 8px; padding: .55rem; }
+.marker-counts { display: grid; gap: .38rem; margin-top: .5rem; }
+.marker-counts div { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+.marker-counts strong { min-width: 5.2rem; font-size: .89rem; }
+.marker-counts span { padding: .15rem .4rem; border-radius: 5px; background: white; border: 1px solid var(--line); font-size: .85rem; }
+.mark-bar { display: grid; grid-template-columns: 6rem 1fr 3.3rem; align-items: center; gap: .32rem; margin-top: .5rem; font-size: .86rem; }
+.mark-bar > div { height: 9px; background: #dae6df; border-radius: 5px; }
+.mark-bar i { display: block; width: var(--amount); height: 100%; border-radius: 5px; background: var(--color); }
+.mark-bar span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+#equations { padding-top: .45rem; }
+#equations h4 { margin: .45rem 0 .25rem; color: var(--accent); }
+.marker-equations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
+.marker-equations section { border: 1px solid var(--line); border-radius: 6px; padding: .45rem; min-width: 0; }
+.marker-equations p { margin-top: .26rem; }
+.marker-equations code { overflow-wrap: anywhere; font-size: .80rem; }
+.optional-review { margin-top: .65rem; }
+.optional-review button, #review-result { margin-top: .45rem; }
+@media (max-width: 625px) {
+  .marker-evidence, .marker-equations { grid-template-columns: 1fr; }
+}
